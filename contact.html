@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артем Перебойчук | Frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про мене</a></li>
+                <li><a href="projects.html">Проєкти</a></li>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">Зв'яжіться зі мною</h1>
+
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <h2>Мої контакти</h2>
+                <p>Відкритий до нових вебпроєктів та співпраці. Напишіть мені, і ми обговоримо всі деталі вашого
+                    майбутнього сайту.</p>
+
+                <ul class="info-list">
+                    <li><strong>GitHub:</strong> <a href="https://github.com/pereboichukartem"
+                            target="_blank">pereboichukartem</a></li>
+                    <li><strong>Email:</strong> <a
+                            href="mailto:pereboichukartem@gmail.com">pereboichukartem@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formsubmit.co/pereboichukartem@gmail.com" method="POST">
+
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_next" value="https://pereboichukartem.github.io/contact.html">
+
+                    <div class="form-group">
+                        <label for="name">Ваше ім'я</label>
+                        <input type="text" id="name" name="name" required placeholder="Як до вас звертатися?">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш Email</label>
+                        <input type="email" id="email" name="email" required placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Повідомлення</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Опишіть ваш проєкт або завдання..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Відправити</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
