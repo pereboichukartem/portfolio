@@ -32,7 +32,7 @@ document.getElementById('tg-form').addEventListener('submit', function(e) {
     })
     .then(res => {
         if(res.ok) {
-            alert("Повідомлення успішно відправлено!"); 
+            alert("Повідомлення успішно відправлено!\nНайближчим часом я вам напишу!"); 
             this.reset(); 
         } else {
             alert("Сталася помилка. Спробуйте пізніше.");
