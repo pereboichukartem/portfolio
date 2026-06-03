@@ -20,7 +20,7 @@ if (hamburger && navLinks) {
 const tgForm = document.getElementById('tg-form');
 
 if (tgForm) {
-    const TOKEN = "8893397141:AAG8-tN8GZVy5vmJ-tFUOMbyhLHgf7W1wkU"; 
+    const TOKEN = "8893397141:AAG8-tN8GZVy5vmJ-tFUOMbyhLHgf7WlWkU"; 
     const CHAT_ID = "1367650899"; 
     const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
