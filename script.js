@@ -1,3 +1,22 @@
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+
 const TOKEN = "8893397141:AAG8-tN8GZVy5vmJ-tFUOMbyhLHgf7WlWkU"; 
 
 const CHAT_ID = "1367650899"; 
