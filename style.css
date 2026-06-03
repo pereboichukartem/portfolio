@@ -15,13 +15,30 @@ header {
     padding: 20px 0;
     background: #161B22;
     border-bottom: 1px solid #30363D;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #58A6FF;
+    text-decoration: none;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 30px;
+    align-items: center;
 }
 
 nav a {
@@ -36,33 +53,50 @@ nav a:hover {
     color: #58A6FF;
 }
 
-.hero {
-    min-height: 70vh;
-    display: flex;
+/* Гамбургер */
+.hamburger {
+    display: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #F0F6FC;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/*  ЗАГАЛЬНІ ЕЛЕМЕНТИ */
+.container {
+    padding: 0 5%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.page-title {
     text-align: center;
-    padding: 40px 20px;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 15px;
+    margin: 50px 0 30px;
+    font-size: 2.5rem;
     color: #F0F6FC;
-}
-
-.hero h2 {
-    color: #58A6FF;
-    margin-bottom: 25px;
-    font-size: 2rem;
-}
-
-.hero p {
-    max-width: 700px;
-    font-size: 1.2rem;
-    color: #8B949E;
-    margin-bottom: 35px;
 }
 
 .btn {
@@ -74,12 +108,30 @@ nav a:hover {
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
 }
 
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
 }
+
+/*  ГОЛОВНА СТОРІНКА  */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 { font-size: 4rem; margin-bottom: 15px; color: #F0F6FC; }
+.hero h2 { color: #58A6FF; margin-bottom: 25px; font-size: 2rem; }
+.hero p { max-width: 700px; font-size: 1.2rem; color: #8B949E; margin-bottom: 35px; }
 
 .stats {
     display: flex;
@@ -102,29 +154,10 @@ nav a:hover {
     transition: transform 0.3s ease;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-}
+.stat-card:hover { transform: translateY(-5px); }
+.stat-card h3 { color: #58A6FF; font-size: 2.5rem; margin-bottom: 10px; }
 
-.stat-card h3 {
-    color: #58A6FF;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.container {
-    padding: 0 5%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.page-title {
-    text-align: center;
-    margin: 50px 0 30px;
-    font-size: 2.5rem;
-    color: #F0F6FC;
-}
-
+/*  ПРОЄКТИ */
 .cards-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -143,9 +176,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-.project-card:hover {
-    transform: rotateY(180deg);
-}
+.project-card:hover { transform: rotateY(180deg); }
 
 .card-front, .card-back {
     position: absolute;
@@ -172,28 +203,9 @@ nav a:hover {
     justify-content: center;
 }
 
-.project-card h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    color: #58A6FF;
-    text-align: center;
-}
-
-.project-card p {
-    font-size: 1rem;
-    color: #8B949E;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #30363D;
-    margin-bottom: 20px;
-}
+.project-card h2 { font-size: 1.4rem; margin-bottom: 20px; color: #58A6FF; text-align: center; }
+.project-card p { font-size: 1rem; color: #8B949E; text-align: center; margin-bottom: 20px; }
+.img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid #30363D; margin-bottom: 20px; }
 
 .details {
     font-size: 1rem;
@@ -209,11 +221,10 @@ nav a:hover {
 }
 
 .details:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4); 
 }
 
-/* --- SERVICES PAGE --- */
+/*  ПОСЛУГИ  */
 .services-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -238,31 +249,10 @@ nav a:hover {
     border-color: #58A6FF;
 }
 
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.service-card h2 {
-    color: #F0F6FC;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    color: #8B949E;
-    font-size: 1rem;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.service-card .price {
-    color: #58A6FF;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding-top: 15px;
-    border-top: 1px solid #30363D;
-}
+.service-icon { font-size: 3rem; margin-bottom: 20px; }
+.service-card h2 { color: #F0F6FC; font-size: 1.5rem; margin-bottom: 15px; }
+.service-card p { color: #8B949E; font-size: 1rem; margin-bottom: 25px; flex-grow: 1; }
+.service-card .price { color: #58A6FF; font-weight: bold; font-size: 1.2rem; padding-top: 15px; border-top: 1px solid #30363D; }
 
 .cta-section {
     text-align: center;
@@ -273,18 +263,15 @@ nav a:hover {
     margin-bottom: 60px;
 }
 
-.cta-section h2 {
-    color: #F0F6FC;
-    font-size: 2rem;
-    margin-bottom: 15px;
+.cta-section h2 { 
+    color: #F0F6FC; font-size: 2rem; margin-bottom: 15px; 
 }
 
-.cta-section p {
-    color: #8B949E;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+.cta-section p { 
+    color: #8B949E; font-size: 1.1rem; margin-bottom: 30px; 
 }
-/* --- CONTACT PAGE --- */
+
+/*  КОНТАКТИ */
 .contact-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -293,7 +280,7 @@ nav a:hover {
     padding-bottom: 60px;
 }
 
-.contact-info {
+.contact-info, .contact-form {
     flex: 1;
     min-width: 300px;
     background: #161B22;
@@ -302,61 +289,18 @@ nav a:hover {
     border: 1px solid #30363D;
 }
 
-.contact-info h2 {
-    color: #F0F6FC;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
+.contact-form { flex: 1.5; }
+.contact-info h2 { color: #F0F6FC; margin-bottom: 20px; font-size: 1.8rem; }
+.contact-info p { color: #8B949E; margin-bottom: 30px; line-height: 1.6; }
+.info-list { list-style: none; padding: 0; }
+.info-list li { margin-bottom: 15px; color: #F0F6FC; font-size: 1.1rem; }
+.info-list a { color: #58A6FF; text-decoration: none; transition: color 0.3s ease; }
+.info-list a:hover { color: #F0F6FC; }
 
-.contact-info p {
-    color: #8B949E;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: #F0F6FC; font-weight: bold; }
 
-.info-list {
-    list-style: none;
-    padding: 0;
-}
-
-.info-list li {
-    margin-bottom: 15px;
-    color: #F0F6FC;
-    font-size: 1.1rem;
-}
-
-.info-list a {
-    color: #58A6FF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.info-list a:hover {
-    color: #F0F6FC;
-}
-
-.contact-form {
-    flex: 1.5;
-    min-width: 300px;
-    background: #161B22;
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid #30363D;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #F0F6FC;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
+.form-group input, .form-group textarea {
     width: 100%;
     padding: 15px;
     background: #0D1117;
@@ -368,38 +312,38 @@ nav a:hover {
     font-family: inherit;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: #58A6FF;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
 }
 
-.contact-form .btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
+.contact-form .btn { width: 100%; margin-top: 10px; }
+
+/* --- АДАПТИВНІСТЬ (МЕДІАЗАПИТИ) --- */
 @media(max-width: 768px) {
-    .cta-section h2 {
-        font-size: 1.6rem;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+    .hero h1 { font-size: 2.3rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .stats { flex-direction: column; align-items: center; }
+    .project-card { width: 100%; max-width: 350px; }
+    .cta-section h2 { font-size: 1.6rem; }
+    
+    .hamburger { display: flex; }
+    
     nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .stats {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        max-width: 350px;
+        background: #161B22;
+        padding: 30px 0;
+        gap: 25px;
+        border-bottom: 1px solid #30363D;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
+    
+    nav ul.active { display: flex; }
 }
