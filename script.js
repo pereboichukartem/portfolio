@@ -28,12 +28,12 @@ if (tgForm) {
         e.preventDefault();
 
         let name = document.getElementById('name').value;
-        let email = document.getElementById('email').value;
+        let telegram = document.getElementById('telegram').value;
         let message = document.getElementById('message').value;
 
         let text = `<b>Нове замовлення з сайту!</b>\n\n`;
         text += `<b>Ім'я:</b> ${name}\n`;
-        text += `<b>Telegram:</b> ${email}\n`;
+        text += `<b>Telegram:</b> ${telegram}\n`;
         text += `<b>Повідомлення:</b> ${message}`;
 
         fetch(URI_API, {
