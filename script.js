@@ -33,7 +33,7 @@ if (tgForm) {
 
         let text = `<b>Нове замовлення з сайту!</b>\n\n`;
         text += `<b>Ім'я:</b> ${name}\n`;
-        text += `<b>Email:</b> ${email}\n`;
+        text += `<b>Telegram:</b> ${email}\n`;
         text += `<b>Повідомлення:</b> ${message}`;
 
         fetch(URI_API, {
